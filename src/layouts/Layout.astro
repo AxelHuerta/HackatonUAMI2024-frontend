@@ -1,0 +1,55 @@
+---
+import Navbar from "../components/Navbar.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Navbar />
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
+<style is:global>
+  html {
+    font-family: system-ui, sans-serif;
+    background-size: 224px;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2em;
+  }
+  main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    padding-top: 9em;
+  }
+  h1 {
+    text-align: center;
+  }
+  button {
+    background: #121212;
+    color: #fff;
+    border: none;
+    margin: 1em;
+    padding: 0.8em 1em;
+    border-radius: 0.2em;
+  }
+</style>

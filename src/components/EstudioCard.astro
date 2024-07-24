@@ -1,0 +1,26 @@
+---
+type Props = {
+  title: string;
+  link: string | undefined;
+};
+
+const { title, link } = Astro.props;
+---
+
+<div>
+  <h3>{title}</h3>
+  <a href={link}>
+    <button>Ver más</button>
+  </a>
+</div>
+
+<style>
+  div {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 1em;
+    margin: 1em;
+    border-radius: 0.5em;
+  }
+</style>
