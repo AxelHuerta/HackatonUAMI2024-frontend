@@ -3,9 +3,9 @@ import "@/styles/globals.css";
 import { Button } from "@/components/ui/button";
 
 const items = [
-  { name: "Procedimientos", href: "/" },
-  { name: "Productos", href: "/about" },
-  { name: "Crear Publicación", href: "/creapublicacion" },
+  { name: "Procedimientos", href: "/procedimientos" },
+  { name: "Productos", href: "/productos" },
+  { name: "Crear Publicación", href: "/crearguia" },
 ];
 ---
 
@@ -21,7 +21,7 @@ const items = [
         return (
           <li class="mx-4 flex items-center">
             <a href={item.href}>
-              {item.href === "/creapublicacion" ? (
+              {item.href === "/crearguia" ? (
                 <Button className="text-xl">{item.name}</Button>
               ) : (
                 item.name
