@@ -1,6 +1,6 @@
 ---
 title: "Análisis del complemento"
-layout: "../../layouts/Layout.astro"
+layout: "../../layouts/EstudioLayout.astro"
 ---
 
 # Análisis del complemento

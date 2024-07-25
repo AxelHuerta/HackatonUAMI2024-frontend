@@ -1,6 +1,6 @@
 ---
 title: "Análisis del líquido sinovial"
-layout: "../../layouts/Layout.astro"
+layout: "../../layouts/EstudioLayout.astro"
 ---
 
 # Análisis del líquido sinovial

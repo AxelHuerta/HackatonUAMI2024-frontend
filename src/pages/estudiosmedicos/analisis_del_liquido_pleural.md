@@ -1,6 +1,6 @@
 ---
 title: "Análisis del líquido pleural"
-layout: "../../layouts/Layout.astro"
+layout: "../../layouts/EstudioLayout.astro"
 ---
 
 # Análisis del líquido pleural

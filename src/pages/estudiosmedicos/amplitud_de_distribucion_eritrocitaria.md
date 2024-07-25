@@ -1,6 +1,6 @@
 ---
 title: "Amplitud de distribución eritrocitaria"
-layout: "../../layouts/Layout.astro"
+layout: "../../layouts/EstudioLayout.astro"
 ---
 
 # Amplitud de distribución eritrocitaria

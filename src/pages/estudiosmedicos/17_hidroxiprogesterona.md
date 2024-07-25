@@ -1,6 +1,6 @@
 ---
 title: "Prueba de 17-hidroxiprogesterona (17-OHP)"
-layout: "../../layouts/Layout.astro"
+layout: "../../layouts/EstudioLayout.astro"
 ---
 # 17-hidroxiprogesterona
 

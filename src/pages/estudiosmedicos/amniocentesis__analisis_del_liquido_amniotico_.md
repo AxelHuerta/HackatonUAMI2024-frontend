@@ -1,6 +1,6 @@
 ---
 title: "Amniocentesis (análisis del líquido amniótico)"
-layout: "../../layouts/Layout.astro"
+layout: "../../layouts/EstudioLayout.astro"
 ---
 
 # Amniocentesis (análisis del líquido amniótico)

@@ -1,6 +1,6 @@
 ---
 title: "Análisis de globulinas"
-layout: "../../layouts/Layout.astro"
+layout: "../../layouts/EstudioLayout.astro"
 ---
 
 # Análisis de globulinas

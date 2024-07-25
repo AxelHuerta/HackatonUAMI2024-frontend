@@ -1,6 +1,6 @@
 ---
 title: "Análisis de hemoglobina"
-layout: "../../layouts/Layout.astro"
+layout: "../../layouts/EstudioLayout.astro"
 ---
 
 # Análisis de hemoglobina

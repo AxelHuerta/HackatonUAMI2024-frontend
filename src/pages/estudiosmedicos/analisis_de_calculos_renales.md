@@ -1,6 +1,6 @@
 ---
 title: "Análisis de cálculos renales"
-layout: "../../layouts/Layout.astro"
+layout: "../../layouts/EstudioLayout.astro"
 ---
 
 # Análisis de cálculos renales

@@ -1,6 +1,6 @@
 ---
 title: "Análisis del líquido cefalorraquídeo"
-layout: "../../layouts/Layout.astro"
+layout: "../../layouts/EstudioLayout.astro"
 ---
 
 # Análisis del líquido cefalorraquídeo

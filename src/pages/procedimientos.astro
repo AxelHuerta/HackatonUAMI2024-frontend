@@ -1,9 +1,46 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Button } from "@/components/ui/button";
+
+const estudiosList = await Astro.glob("../pages/estudiosmedicos/*.md");
 ---
 
 <Layout title="Procedimientos">
   <section class="pt-24">
-    <h1 class="text-6xl">Procedimientos</h1>
+    <h1 class="text-6xl font-bold my-12 text-center">Procedimientos</h1>
+
+    <div class="grid grid-cols-2 gap-4 m-auto max-w-[1400px]">
+      {
+        estudiosList.map((estudio) => {
+          return (
+            <Card>
+              <CardHeader>
+                <Skeleton className="w-full h-[300px]" />
+              </CardHeader>
+              <CardContent>
+                <CardTitle>{estudio.frontmatter.title}</CardTitle>
+                <CardDescription>
+                  {estudio.frontmatter.description}
+                </CardDescription>
+              </CardContent>
+              <CardFooter>
+                <a href={estudio.url}>
+                  <Button className="font-bold text-lg">Ver</Button>
+                </a>
+              </CardFooter>
+            </Card>
+          );
+        })
+      }
+    </div>
   </section>
 </Layout>

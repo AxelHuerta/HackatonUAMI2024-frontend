@@ -1,5 +1,13 @@
 ---
 import "@/styles/globals.css";
+import {
+  Astronav,
+  MenuItems,
+  MenuIcon,
+  Dropdown,
+  DropdownItems,
+  DropdownSubmenu,
+} from "astro-navbar";
 import { Button } from "@/components/ui/button";
 
 const items = [
@@ -9,27 +17,43 @@ const items = [
 ];
 ---
 
-<nav
-  class="fixed bg-white w-full flex justify-between items-center text-xl font-bold px-20 py-4 z-10"
->
-  <a href="/">
-    <span>Medi Guía App</span>
-  </a>
-  <ul class="flex">
-    {
-      items.map((item) => {
-        return (
-          <li class="mx-4 flex items-center">
-            <a href={item.href}>
-              {item.href === "/crearguia" ? (
-                <Button className="text-xl">{item.name}</Button>
-              ) : (
-                item.name
-              )}
-            </a>
-          </li>
-        );
-      })
-    }
-  </ul>
-</nav>
+<Astronav>
+  <div class="flex justify-between">
+    <a>Your Logo</a>
+    <MenuIcon class="w-4 h-4 text-gray-800" />
+  </div>
+  <MenuItems class="hidden lg:flex">
+    <ul>
+      <li>Home</li>
+      <li>About</li>
+      <li>
+        <Dropdown class="group">
+          <button>
+            <span> Services </span>
+            <!-- You can style when dropdown is `open` -->
+            <svg class="group-open:rotate-180">...arrow..</svg>
+          </button>
+          <DropdownItems>
+            <div class="absolute top-0">
+              <ul>
+                <li>Menu 1</li>
+                <li>Menu 2</li>
+                <li>
+                  <DropdownSubmenu>
+                    <button>Submenu</button>
+                    <DropdownItems>
+                      <ul>
+                        <li>Sub Menu 1</li>
+                        <li>Sub Menu 2</li>
+                      </ul>
+                    </DropdownItems>
+                  </DropdownSubmenu>
+                </li>
+              </ul>
+            </div>
+          </DropdownItems>
+        </Dropdown>
+      </li>
+    </ul>
+  </MenuItems>
+</Astronav>
