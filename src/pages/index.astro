@@ -1,5 +1,13 @@
 ---
 import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import Layout from "../layouts/Layout.astro";
 
 const heroBtnsStyles = "text-xl px-12 py-6 font-bold border-black border-2";
@@ -37,7 +45,7 @@ const heroBtnsStyles = "text-xl px-12 py-6 font-bold border-black border-2";
   <!-- guias -->
   <section class="my-20">
     <div class="max-w-6xl m-auto">
-      <h2 class="text-center text-4xl font-bold my-4">Guías más vistas ?</h2>
+      <h2 class="text-center text-4xl font-bold my-4">Guías recientes</h2>
 
       <p class="m-auto">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
@@ -49,5 +57,103 @@ const heroBtnsStyles = "text-xl px-12 py-6 font-bold border-black border-2";
         iure expedita pariatur quasi ad ea ab officiis maxime.
       </p>
     </div>
+
+    <div class="grid grid-cols-3 max-w-[1600px] gap-4 m-auto my-12">
+      <Card className="">
+        <CardHeader>
+          <img
+            src="https://www.poresto.net/u/fotografias/fotosnoticias/2020/7/24/4455.jpeg"
+            alt=""
+          />
+          <CardTitle>Create project</CardTitle>
+          >Deploy your new project in one-click.</CardHeader
+        >
+        <CardContent>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos
+            deserunt impedit quam aliquam molestiae deleniti magni voluptas est
+            perspiciatis aliquid voluptatum
+          </p>
+        </CardContent>
+        <CardFooter className="flex justify-between">
+          <Button variant="outline">Cancel</Button>
+          <Button>Deploy</Button>
+        </CardFooter>
+      </Card>
+
+      <!-- second card -->
+      <Card>
+        <CardHeader>
+          <img
+            src="https://www.poresto.net/u/fotografias/fotosnoticias/2020/7/24/4455.jpeg"
+            alt=""
+          />
+          <CardTitle>Create project</CardTitle>
+          >Deploy your new project in one-click.</CardHeader
+        >
+        <CardContent>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos
+            deserunt impedit quam aliquam molestiae deleniti magni voluptas est
+            perspiciatis aliquid voluptatum
+          </p>
+        </CardContent>
+        <CardFooter className="flex justify-between">
+          <Button variant="outline">Cancel</Button>
+          <Button>Deploy</Button>
+        </CardFooter>
+      </Card>
+
+      <!-- third card -->
+      <Card>
+        <CardHeader>
+          <img
+            src="https://www.poresto.net/u/fotografias/fotosnoticias/2020/7/24/4455.jpeg"
+            alt=""
+          />
+          <CardTitle>Create project</CardTitle>
+          >Deploy your new project in one-click.</CardHeader
+        >
+        <CardContent>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos
+            deserunt impedit quam aliquam molestiae deleniti magni voluptas est
+            perspiciatis aliquid voluptatum
+          </p>
+        </CardContent>
+        <CardFooter className="flex justify-between">
+          <Button variant="outline">Cancel</Button>
+          <Button>Deploy</Button>
+        </CardFooter>
+      </Card>
+    </div>
+
+    <hr />
+
+    <!-- TODO: add link -->
+    <center>
+      <Button className="my-4 text-center">Ver todas las guías nuevas</Button>
+    </center>
   </section>
+
+  <!-- create guides -->
+  <section
+    class="bg-[#717d96] min-h-[500px] flex flex-col justify-center items-center"
+  >
+    <p class="text-6xl">Crear guía</p>
+    <p class="text-4xl text-extrabold">
+      ¿Qué no sería mejor una mini descripción de esto y ya en la mera página ya
+      esto?
+    </p>
+  </section>
+
+  <footer class="bg-black text-white p-12">
+    <span>Medi Guía App</span>
+    <div class="flex justify-around">
+      <span>Copyright</span>
+      <span>lorem</span>
+      <span>ipsum</span>
+      <span>eso</span>
+    </div>
+  </footer>
 </Layout>
