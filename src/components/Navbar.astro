@@ -1,13 +1,16 @@
 ---
+import "@/styles/globals.css";
+import { Button } from "@/components/ui/button";
+
 const items = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Contact", href: "/contact" },
+  { name: "Procedimientos", href: "/" },
+  { name: "Productos", href: "/about" },
+  { name: "Crear Publicación", href: "/creapublicacion" },
 ];
 ---
 
 <nav
-  class="fixed bg-white w-full flex justify-between items-center text-2xl font-bold p-4"
+  class="fixed bg-white w-full flex justify-between items-center text-xl font-bold px-20 py-4"
 >
   <a href="/">
     <span>Medi Guía App</span>
@@ -16,8 +19,14 @@ const items = [
     {
       items.map((item) => {
         return (
-          <li class="mx-4 text-2xl">
-            <a href={item.href}>{item.name}</a>
+          <li class="mx-4 flex items-center">
+            <a href={item.href}>
+              {item.href === "/creapublicacion" ? (
+                <Button className="text-xl">{item.name}</Button>
+              ) : (
+                item.name
+              )}
+            </a>
           </li>
         );
       })
