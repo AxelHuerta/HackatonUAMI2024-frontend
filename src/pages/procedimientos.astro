@@ -8,33 +8,49 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
 const estudiosList = await Astro.glob("../pages/estudiosmedicos/*.md");
+
+const data = await fetch("http://localhost:8080/api/articulos").then(
+  (response: Response) => {
+    if (response.ok) {
+      return response.json();
+    }
+  }
+);
 ---
 
 <Layout title="Procedimientos">
   <section class="pt-24">
-    <h1 class="text-6xl font-bold my-12 text-center">Procedimientos</h1>
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold my-12 text-center">
+      Procedimientos
+    </h1>
 
-    <div class="grid grid-cols-2 gap-4 m-auto max-w-[1400px]">
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 m-auto max-w-[1400px]"
+    >
       {
-        estudiosList.map((estudio) => {
+        // TODO: any
+        data.map((estudio: any) => {
           return (
             <Card>
               <CardHeader>
-                <Skeleton className="w-full h-[300px]" />
+                <img
+                  src={estudio.foto}
+                  class="h-[300px] w-full object-cover"
+                  alt=""
+                />
               </CardHeader>
               <CardContent>
-                <CardTitle>{estudio.frontmatter.title}</CardTitle>
-                <CardDescription>
-                  {estudio.frontmatter.description}
-                </CardDescription>
+                <CardTitle>{estudio.titulo}</CardTitle>
+                <CardDescription>{estudio.descripcion}</CardDescription>
               </CardContent>
-              <CardFooter>
-                <a href={estudio.url}>
-                  <Button className="font-bold text-lg">Ver</Button>
+              <CardFooter className="flex justify-between">
+                <Badge>{estudio.categoria.replace("_", " ")}</Badge>
+                <a href={`/procedimiento/${estudio.id}`}>
+                  <Button>Ver más</Button>
                 </a>
               </CardFooter>
             </Card>

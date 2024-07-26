@@ -40,7 +40,7 @@ const Navbar = () => {
         </DrawerTrigger>
         <DrawerContent>
           <div className="mx-auto w-full max-w-sm min-h-screen flex flex-col justify-center items-center">
-            <DrawerClose className="fixed right-12 top-12 text-2xl font-black">
+            <DrawerClose className="fixed right-24 top-24 text-2xl font-black">
               X
             </DrawerClose>
             <DrawerHeader>

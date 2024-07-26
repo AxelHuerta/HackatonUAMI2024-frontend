@@ -1,0 +1,26 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const { procedimiento } = Astro.params;
+const articulo = await fetch(
+  `http://localhost:8080/api/articulos/${procedimiento}`
+).then((response: Response) => {
+  if (response.ok) {
+    return response.json();
+  }
+});
+---
+
+<Layout title={articulo.titulo}>
+  <section class="pt-24">
+    <h1 class="text-6xl font-bold my-12 text-center">{articulo.titulo}</h1>
+    <div class="max-w-4xl mx-auto">
+      <img
+        src={articulo.foto}
+        alt={articulo.titulo}
+        class="w-full h-auto object-cover mb-8"
+      />
+      <p>{articulo.contenido}</p>
+    </div>
+  </section>
+</Layout>
