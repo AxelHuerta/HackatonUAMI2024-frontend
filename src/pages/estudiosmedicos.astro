@@ -6,16 +6,18 @@ const estudiosList = await Astro.glob("../pages/estudiosmedicos/*.md");
 ---
 
 <Layout title="Estudios Médicos">
-  <h1>Estudios Médicos</h1>
-  <p>
-    En esta sección podrás encontrar información sobre los estudios médicos que
-    realizamos en nuestro laboratorio.
-  </p>
-  <ul>
-    {
-      estudiosList.map((estudio) => (
-        <EstudioCard title={estudio.frontmatter.title} link={estudio.url} />
-      ))
-    }
-  </ul>
+  <section class="my-12">
+    <h1>Estudios Médicos</h1>
+    <p>
+      En esta sección podrás encontrar información sobre los estudios médicos
+      que realizamos en nuestro laboratorio.
+    </p>
+    <ul>
+      {
+        estudiosList.map((estudio) => (
+          <EstudioCard title={estudio.frontmatter.title} link={estudio.url} />
+        ))
+      }
+    </ul>
+  </section>
 </Layout>

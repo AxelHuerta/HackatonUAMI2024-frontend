@@ -26,6 +26,16 @@ const { title } = Astro.props;
     <main>
       <slot />
     </main>
+
+    <footer class="bg-black text-white p-12 pt-24">
+      <span class="font-black font-2xl">Medi Guía App</span>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <span class="mx-4">Política de privacidad</span>
+        <span class="mx-4">Terminos y condiciones</span>
+        <span class="mx-4">Política de cookies</span>
+        <span class="mx-4">Contacto</span>
+      </div>
+    </footer>
   </body>
 </html>
 <style is:global>

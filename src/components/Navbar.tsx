@@ -17,7 +17,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="flex justify-between items-center px-12 py-4">
+    <div className="fixed bg-white w-full flex justify-between items-center px-12 py-4 z-10">
       <a href="/">
         <span className="text-xl font-black">Media Guía App</span>
       </a>

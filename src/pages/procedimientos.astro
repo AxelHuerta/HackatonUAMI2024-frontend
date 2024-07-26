@@ -23,7 +23,7 @@ const data = await fetch("http://localhost:8080/api/articulos").then(
 ---
 
 <Layout title="Procedimientos">
-  <section class="pt-24">
+  <section class="pt-24 mb-12">
     <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold my-12 text-center">
       Procedimientos
     </h1>
@@ -44,13 +44,17 @@ const data = await fetch("http://localhost:8080/api/articulos").then(
                 />
               </CardHeader>
               <CardContent>
-                <CardTitle>{estudio.titulo}</CardTitle>
-                <CardDescription>{estudio.descripcion}</CardDescription>
+                <CardTitle className="text-2xl">{estudio.titulo}</CardTitle>
+                <CardDescription className="text-xl">
+                  {estudio.descripcion}
+                </CardDescription>
               </CardContent>
               <CardFooter className="flex justify-between">
-                <Badge>{estudio.categoria.replace("_", " ")}</Badge>
+                <Badge className="text-lg">
+                  {estudio.categoria.replace("_", " ")}
+                </Badge>
                 <a href={`/procedimiento/${estudio.id}`}>
-                  <Button>Ver más</Button>
+                  <Button className="text-lg">Ver más</Button>
                 </a>
               </CardFooter>
             </Card>

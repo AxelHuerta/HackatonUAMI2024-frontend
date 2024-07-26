@@ -47,7 +47,7 @@ const heroBtnsStyles =
     <div class="max-w-6xl m-auto">
       <h2 class="text-center text-4xl font-bold my-4">Guías recientes</h2>
 
-      <p class="m-auto">
+      <p class="m-auto px-4 text-xl">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
         necessitatibus deleniti fugiat culpa excepturi voluptates minima nulla,
         totam minus? Dolor dolorem sint possimus earum animi quidem. Odit
@@ -132,9 +132,12 @@ const heroBtnsStyles =
 
     <hr />
 
-    <!-- TODO: add link -->
     <center>
-      <Button className="my-4 text-center">Ver todas las guías nuevas</Button>
+      <a href="/procedimientos">
+        <Button className="my-4 text-center text-xl"
+          >Ver todas las guías nuevas</Button
+        >
+      </a>
     </center>
   </section>
 
@@ -143,23 +146,13 @@ const heroBtnsStyles =
     class="bg-[#edf0f7] min-h-[500px] flex flex-col justify-center items-center"
   >
     <p class="text-6xl">Crear guía</p>
-    <p class="text-xl text-extrabold max-w-[1200px] my-12">
+    <p class="text-xl text-extrabold max-w-[1200px] my-12 p-4">
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint facilis
       officia architecto, ea qui reiciendis sed fugiat blanditiis. Quaerat error
       laudantium quo saepe numquam enim eligendi dolore, harum nobis sint!
     </p>
     <a href="/crearguia">
-      <Button>Crear guía</Button>
+      <Button className="text-xl">Crear guía</Button>
     </a>
   </section>
-
-  <footer class="bg-black text-white p-12 pt-24">
-    <span class="font-black font-2xl">Medi Guía App</span>
-    <div class="flex my-4">
-      <span class="mx-4">Política de privacidad</span>
-      <span class="mx-4">Terminos y condiciones</span>
-      <span class="mx-4">Política de cookies</span>
-      <span class="mx-4">Contacto</span>
-    </div>
-  </footer>
 </Layout>
