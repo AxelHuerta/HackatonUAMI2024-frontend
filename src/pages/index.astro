@@ -9,7 +9,8 @@ import {
 } from "@/components/ui/card";
 import Layout from "../layouts/Layout.astro";
 
-const heroBtnsStyles = "text-xl px-12 py-6 font-bold border-black border-2";
+const heroBtnsStyles =
+  "text-xl px-12 py-6 font-bold border-black border-2 w-full";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -18,7 +19,7 @@ const heroBtnsStyles = "text-xl px-12 py-6 font-bold border-black border-2";
     class="bg-[#edf0f7] w-full min-h-screen flex justify-center items-center flex-col"
   >
     <!-- title -->
-    <h1 class="text-8xl font-black text-center">Medi Guía App</h1>
+    <h1 class="text-6xl md:text-8xl font-black text-center">Medi Guía App</h1>
     <!-- <p class="text-2xl font-bold mt-12">Buscar algo en especifíco</p> -->
     <!-- search input -->
     <!-- <input
@@ -29,7 +30,7 @@ const heroBtnsStyles = "text-xl px-12 py-6 font-bold border-black border-2";
     /> -->
 
     <!-- buttons -->
-    <div class="my-4 grid grid-cols-2 gap-4">
+    <div class="my-4 grid grid-cols-1 md:grid-cols-2 gap-4">
       <a href="/procedimientos">
         <Button className={heroBtnsStyles}>Procedimientos</Button>
       </a>
@@ -57,7 +58,9 @@ const heroBtnsStyles = "text-xl px-12 py-6 font-bold border-black border-2";
       </p>
     </div>
 
-    <div class="grid grid-cols-3 max-w-[1600px] gap-4 m-auto my-12">
+    <div
+      class="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 max-w-[1600px] gap-4 m-auto my-12"
+    >
       <Card className="">
         <CardHeader>
           <img

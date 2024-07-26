@@ -36,7 +36,7 @@ const Navbar = () => {
       </ul>
       <Drawer>
         <DrawerTrigger asChild>
-          <Button className="md:hidden">Menu</Button>
+          <Button className="md:hidden text-xl">Menu</Button>
         </DrawerTrigger>
         <DrawerContent>
           <div className="mx-auto w-full max-w-sm min-h-screen flex flex-col justify-center items-center">
