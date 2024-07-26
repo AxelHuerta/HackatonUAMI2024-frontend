@@ -45,12 +45,12 @@ function Form() {
 
   const handleForm = async () => {
     await axios
-      .post("http://localhost:3000/api/articulos", {
-        title,
-        description,
-        content,
-        photo,
-        category,
+      .post("http://localhost:8080/api/articulos", {
+        titulo: title,
+        contenido: content,
+        descripcion: description,
+        categoria: category,
+        foto: photo,
       })
       .then((res) => {
         console.log(res);
@@ -59,13 +59,6 @@ function Form() {
         setErrorAlertMessage(error.message);
         setErrorAlert(true);
       });
-    console.log({
-      title,
-      description,
-      content,
-      photo,
-      category,
-    });
   };
 
   return (

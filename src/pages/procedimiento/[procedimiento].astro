@@ -1,6 +1,16 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 
+export async function getStaticPaths() {
+  const response = await fetch("http://localhost:8080/api/articulos");
+  const articulos = await response.json();
+
+  // Rutas dinamicas
+  return articulos.map((articulo) => ({
+    params: { procedimiento: articulo.id.toString() },
+  }));
+}
+
 const { procedimiento } = Astro.params;
 const articulo = await fetch(
   `http://localhost:8080/api/articulos/${procedimiento}`
@@ -12,7 +22,7 @@ const articulo = await fetch(
 ---
 
 <Layout title={articulo.titulo}>
-  <section class="pt-24">
+  <section class="pt-24 mb-12">
     <h1 class="text-6xl font-bold my-12 text-center">{articulo.titulo}</h1>
     <div class="max-w-4xl mx-auto">
       <img
