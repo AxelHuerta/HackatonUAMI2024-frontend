@@ -18,7 +18,9 @@ const Navbar = () => {
 
   return (
     <div className="flex justify-between items-center px-12 py-4">
-      <span className="text-xl font-black">Media Guía App</span>
+      <a href="/">
+        <span className="text-xl font-black">Media Guía App</span>
+      </a>
       <ul className="hidden md:flex">
         {items.map((item) => {
           return (
