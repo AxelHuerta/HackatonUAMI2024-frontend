@@ -6,11 +6,23 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
+  CardDescription,
 } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import Layout from "../layouts/Layout.astro";
 
 const heroBtnsStyles =
   "text-xl px-12 py-6 font-bold border-black border-2 w-full";
+
+const data = await fetch("http://localhost:8080/api/articulos").then(
+  (response: Response) => {
+    if (response.ok) {
+      return response.json();
+    }
+  }
+);
+
+const procedimientos = data.slice(-3);
 ---
 
 <Layout title="Welcome to Astro.">
@@ -61,73 +73,37 @@ const heroBtnsStyles =
     <div
       class="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 max-w-[1600px] gap-4 m-auto my-12"
     >
-      <Card className="">
-        <CardHeader>
-          <img
-            src="https://www.poresto.net/u/fotografias/fotosnoticias/2020/7/24/4455.jpeg"
-            alt=""
-          />
-          <CardTitle>Create project</CardTitle>
-          >Deploy your new project in one-click.</CardHeader
-        >
-        <CardContent>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos
-            deserunt impedit quam aliquam molestiae deleniti magni voluptas est
-            perspiciatis aliquid voluptatum
-          </p>
-        </CardContent>
-        <CardFooter className="flex justify-between">
-          <Button variant="outline">Cancel</Button>
-          <Button>Deploy</Button>
-        </CardFooter>
-      </Card>
-
-      <!-- second card -->
-      <Card>
-        <CardHeader>
-          <img
-            src="https://www.poresto.net/u/fotografias/fotosnoticias/2020/7/24/4455.jpeg"
-            alt=""
-          />
-          <CardTitle>Create project</CardTitle>
-          >Deploy your new project in one-click.</CardHeader
-        >
-        <CardContent>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos
-            deserunt impedit quam aliquam molestiae deleniti magni voluptas est
-            perspiciatis aliquid voluptatum
-          </p>
-        </CardContent>
-        <CardFooter className="flex justify-between">
-          <Button variant="outline">Cancel</Button>
-          <Button>Deploy</Button>
-        </CardFooter>
-      </Card>
-
-      <!-- third card -->
-      <Card>
-        <CardHeader>
-          <img
-            src="https://www.poresto.net/u/fotografias/fotosnoticias/2020/7/24/4455.jpeg"
-            alt=""
-          />
-          <CardTitle>Create project</CardTitle>
-          >Deploy your new project in one-click.</CardHeader
-        >
-        <CardContent>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos
-            deserunt impedit quam aliquam molestiae deleniti magni voluptas est
-            perspiciatis aliquid voluptatum
-          </p>
-        </CardContent>
-        <CardFooter className="flex justify-between">
-          <Button variant="outline">Cancel</Button>
-          <Button>Deploy</Button>
-        </CardFooter>
-      </Card>
+      {
+        procedimientos.map((estudio: any) => {
+          return (
+            <Card>
+              <CardHeader>
+                <img
+                  src={estudio.foto}
+                  class="h-[300px] w-full object-cover"
+                  alt=""
+                />
+              </CardHeader>
+              <CardContent>
+                <CardTitle className="text-2xl">{estudio.titulo}</CardTitle>
+                <CardDescription className="text-xl">
+                  {estudio.descripcion}
+                </CardDescription>
+              </CardContent>
+              <CardFooter className="flex justify-between">
+                <Badge className="text-lg">
+                  {estudio.categoria != undefined
+                    ? estudio.categoria.replace("_", " ")
+                    : ""}
+                </Badge>
+                <a href={`/procedimiento/${estudio.id}`}>
+                  <Button className="text-lg">Ver más</Button>
+                </a>
+              </CardFooter>
+            </Card>
+          );
+        })
+      }
     </div>
 
     <hr />
